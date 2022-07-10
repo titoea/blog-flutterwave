@@ -1,0 +1,48 @@
+$primary-red: #EF5623;
+$primary-black: #2c2c2c;
+$secondary-black: #4b4b4b;
+$light-black: #6e6e6e;
+$primary-blue: #1473e6;
+
+
+$text-xs: 12px;
+$text-sm: 14px;
+$text-md: 18px;
+$text-lg: 22px;
+$text-xl: 32px;
+$text-xxl: 36px;
+
+p{
+    font-size: $text-sm;
+    font-weight: 400;
+    color: $light-black;
+    line-height: 21px;
+    margin: 0;
+}
+
+h4 {
+    margin: 0;
+    font-size: $text-xs;
+    font-weight: 500;
+    color: $light-black;
+    line-height: 14px;
+
+    span {
+        font-weight: 700;
+        color: $secondary-black;
+    }
+}
+
+.bottom-text {
+    width: 100%;
+    position: absolute;
+    bottom: 12px;
+    padding-right: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-size: $text-xs;
+    a{
+        color: $primary-blue;
+        padding-right: 16px;
+    }
+}

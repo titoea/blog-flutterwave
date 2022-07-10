@@ -1,26 +1,54 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="layout">
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: "App",
+  setup() {
+
+
+    return {}
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+/* @font-face{
+    font-family: "SF Pro Text";
+    src: url("@/assets/fonts/SF-Pro-Text-Bold.otf");
+    font-weight: 700;
+} */
+@font-face {
+    font-family: "SF Pro Text";
+    src: url("@/assets/fonts/SF-Pro-Text-Regular.otf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "SF Pro Text";
+    src: url("@/assets/fonts/SF-Pro-Text-Medium.otf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "SF Pro Text";
+    src: url("@/assets/fonts/SF-Pro-Text-Heavy.otf");
+    font-weight: 900;
+}
+
+html,
+body {
+    font-family: "SF Pro Text" !important;
+    background-color: white;
+}
+
+.layout {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 10px;
+    margin-bottom: 227px;
 }
 </style>
