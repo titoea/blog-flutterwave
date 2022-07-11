@@ -12,7 +12,7 @@ $text-lg: 22px;
 $text-xl: 32px;
 $text-xxl: 36px;
 
-p{
+p {
     font-size: $text-sm;
     font-weight: 400;
     color: $light-black;
@@ -41,8 +41,24 @@ h4 {
     display: flex;
     justify-content: space-between;
     font-size: $text-xs;
-    a{
+
+    a {
         color: $primary-blue;
-        padding-right: 16px;
+        padding-right: 35px;
+        text-decoration: none;
+        font-weight: 700;
     }
 }
+
+.bottom-text a::after {
+    content: "";
+    background-image: url("@/assets/icons/arrow.svg");
+    width: 25px;
+    height: 20px;
+    display: inline;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: -3px;
+    margin-left: 4px;
+  }

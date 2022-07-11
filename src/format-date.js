@@ -1,8 +1,8 @@
-import { formatDistanceToNow } from 'date-fns'
+import { formatDistanceToNowStrict } from 'date-fns'
 
 function getTimeAgo(date){
     if(date){
-        return formatDistanceToNow(new Date(date))
+        return formatDistanceToNowStrict(new Date(date))
     }
 }
 

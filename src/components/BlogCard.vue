@@ -4,13 +4,15 @@
             <img :src="blog.jetpack_featured_media_url" :alt="title" class="blog__image" />
         </div>
         <div class="blog__details">
-            <h4><span>Front-end</span> . 1 Month Ago</h4>
+            <h4><span>Front-end</span> . {{timeEllapsed}} Ago</h4>
             <h3 v-html="title"></h3>
             <p class="blog__content" v-html="content">
             </p>
             <div class="bottom-text">
                 <h4>12 Min Read</h4>
-                <router-link :to="`/${blog.id}/details`">Read Full</router-link>
+                <router-link :to="`/${blog.id}/details`">
+                     Read Full
+                </router-link>
             </div>
         </div>
     </div>
@@ -18,6 +20,7 @@
 
 <script>
 import { computed } from 'vue'
+import { getTimeAgo } from '@/format-date'
 
 export default {
     name: "BlogCard",
@@ -30,9 +33,11 @@ export default {
     setup(props) {
         const title = computed(() => props.blog.title?.rendered)
         const content = computed(() => props.blog.excerpt?.rendered)
+        const timeEllapsed = computed(() => getTimeAgo(props.blog.date || new Date()))
         return {
             title,
-            content
+            content,
+            timeEllapsed
         }
     }
 }
