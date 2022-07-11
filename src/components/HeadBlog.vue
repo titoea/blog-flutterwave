@@ -39,23 +39,25 @@ export default {
 .card {
     width: 100%;
     display: flex;
-    height: 280px;
+    flex-direction: row;
     margin-top: 66px;
     border: 1px solid #f5f5f5;
     border-radius: 5px;
     padding: 8px;
-    overflow: hidden;
-    
+
+
     &__image {
         position: relative;
         background: $primary-red;
-        height: 100%;
         width: 40%;
         padding: 0 16px;
-        .rocket{
+        height: 280px;
+
+        .rocket {
             margin-top: 64px;
         }
-        .bg-image{
+
+        .bg-image {
             position: absolute;
             right: 0;
             bottom: 0;
@@ -65,8 +67,16 @@ export default {
     &__details {
         padding: 12px 15px;
         width: 60%;
+        height: 280px;
         position: relative;
 
+        p {
+            display: -webkit-box;
+            -webkit-line-clamp: 7;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
 }
 
@@ -78,11 +88,25 @@ h2 {
     line-height: 26px;
 }
 
-h1{
+h1 {
     font-family: "Playfair Display";
     font-weight: 900;
     font-size: $text-xxl;
     color: white;
     margin: 0;
+    z-index: 100;
+    position: relative;
+}
+
+@media(max-width:1024px) {
+    .card {
+        flex-direction: column;
+        &__image{
+            width: 100%;
+        }
+        &__details{
+            width: 100%;
+        }
+    }
 }
 </style>

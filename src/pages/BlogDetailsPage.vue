@@ -76,7 +76,12 @@ export default {
     max-width: 768px;
     margin: 0 auto;
     margin-top: 91px;
-
+    img{
+        width: 100% !important;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+    }
     &__image {
         width: 100%;
         display: flex;
@@ -98,8 +103,9 @@ export default {
 
 .blog-container {
     margin-top: 23px;
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
 }
 </style>

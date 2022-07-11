@@ -1,18 +1,15 @@
 <template>
-    <div>
-        <HeaderMenu />
-        <HeadBlog />
-        <div class="blog-container">
-            <BlogCard v-for="blog in blogs" :key="blog.id" :blog="blog" />
-        </div>
-        <div class="join-container">
-            <h3>Join our Team of Writers</h3>
-            <h5>On dasdas, writers earn a living doing what they love.<br />
-                Getting started is easy. Just pay a one time <b>$25 fee</b> and everything is ready to go.
-            </h5>
-            <button @click="openPaymentModal">JOIN US</button>
-        </div>
-
+    <HeaderMenu />
+    <HeadBlog />
+    <div class="blog-container">
+        <BlogCard v-for="blog in blogs" :key="blog.id" :blog="blog" />
+    </div>
+    <div class="join-container">
+        <h3>Join our Team of Writers</h3>
+        <h5>On dasdas, writers earn a living doing what they love.<br />
+            Getting started is easy. Just pay a one time <b>$25 fee</b> and everything is ready to go.
+        </h5>
+        <button @click="openPaymentModal">JOIN US</button>
     </div>
 </template>
 
@@ -61,7 +58,7 @@ export default {
                 currency: "NGN",
                 customer: { email: 'ahadzi.airdem@gmail.com', name: 'Edem', phone_number: '+2348188417833' },
                 customizations: { description: "Pay with yourCompanyname", logo: "", title: "YourCompany" },
-                
+
                 onclose: closePaymentModal(),
 
                 payment_options: "card",
@@ -83,8 +80,8 @@ export default {
 <style lang="scss" scoped>
 .blog-container {
     margin-top: 60px;
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     row-gap: 48px;
 }
